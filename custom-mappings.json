@@ -3,7 +3,9 @@
     "pl": "perl",
     "PL": "perl"
   },
-  "fileNames": {},
+  "fileNames": {
+    "turbo.jsonc": "turbo"
+  },
   "folderNames": {},
   "folderNamesExpanded": {}
 }
