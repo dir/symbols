@@ -4,12 +4,9 @@
   "description": "Workspace orchestration for vscode-symbols and zed-symbols",
   "packageManager": "pnpm@10.30.1",
   "scripts": {
-    "submodules:init": "git submodule update --init --recursive",
-    "submodules:sync": "git submodule sync --recursive && git submodule update --init --recursive",
-    "submodules:status": "git submodule status --recursive && git status --short",
-    "vscode:sync": "pnpm --dir ./vscode-symbols sync:upstream",
-    "mappings:apply": "node ./scripts/apply-custom-mappings.mjs",
-    "zed:build": "pnpm run mappings:apply && pnpm --dir ./zed-symbols build",
-    "workspace:sync": "pnpm run vscode:sync && pnpm run zed:build"
+    "setup": "git submodule update --init --recursive",
+    "workspace:status": "git submodule status --recursive && git status --short",
+    "workspace:sync": "node ./scripts/workspace-sync.mjs",
+    "workspace:publish": "node ./scripts/workspace-publish.mjs"
   }
 }
