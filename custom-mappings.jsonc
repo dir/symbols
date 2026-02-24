@@ -9,7 +9,7 @@
     "CONF": "gear",
     "caddyfile": "gear",
     "Caddyfile": "gear",
-    "CADDYFILE": "gear",
+    "CADDYFILE": "gear"
   },
   "fileNames": {
     "Caddyfile": "gear",
@@ -18,6 +18,8 @@
     "robots.txt": "robot",
     "CLAUDE.md": "claude",
     "artisan": "php",
-    "frankenphp": "exe",
+    "frankenphp": "exe"
   },
+  "folderNames": {},
+  "folderNamesExpanded": {}
 }
