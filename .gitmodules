@@ -1,0 +1,8 @@
+[submodule "vscode-symbols"]
+	path = vscode-symbols
+	url = git@github.com:dir/vscode-symbols.git
+	branch = main
+[submodule "zed-symbols"]
+	path = zed-symbols
+	url = git@github.com:dir/zed-symbols.git
+	branch = main

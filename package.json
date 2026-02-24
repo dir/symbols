@@ -1,0 +1,13 @@
+{
+  "name": "symbols-workspace",
+  "private": true,
+  "description": "Workspace orchestration for vscode-symbols and zed-symbols",
+  "scripts": {
+    "submodules:init": "git submodule update --init --recursive",
+    "submodules:sync": "git submodule sync --recursive && git submodule update --init --recursive",
+    "status": "git submodule status --recursive && git status --short",
+    "sync:vscode": "npm --prefix ./vscode-symbols run sync:upstream",
+    "build:zed": "npm --prefix ./zed-symbols run build",
+    "sync:all": "bash ./scripts/sync-all.sh"
+  }
+}
