@@ -3,8 +3,16 @@
   "fileExtensions": {
     "pl": "perl",
     "PL": "perl",
+    "ini": "gear",
+    "INI": "gear",
+    "conf": "gear",
+    "CONF": "gear",
+    "caddyfile": "gear",
+    "Caddyfile": "gear",
+    "CADDYFILE": "gear",
   },
   "fileNames": {
+    "Caddyfile": "gear",
     ".oxfmtrc.json": "oxlint",
     "turbo.jsonc": "turborepo",
     "robots.txt": "robot",
