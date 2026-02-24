@@ -21,6 +21,7 @@ pnpm run setup
 Edit:
 
 - `custom-mappings.json`
+- Schema (auto-generated): `schema/custom-mappings.schema.json`
 
 Example:
 
@@ -47,6 +48,8 @@ Example:
   - Shows root + submodule git status.
 - `pnpm run workspace:sync`
   - Syncs both submodules from upstream, applies root mappings, updates zed assets.
+- `pnpm run schema:generate`
+  - Regenerates `schema/custom-mappings.schema.json` from current `vscode-symbols` icon keys.
 - `pnpm run workspace:publish`
   - Runs `workspace:sync`, commits needed changes, then pushes `vscode-symbols`, `zed-symbols`, and this root repo.
   - This is the one command to run after changing `custom-mappings.json`.

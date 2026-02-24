@@ -77,6 +77,9 @@ rebaseOnUpstream(zedDir, "upstream/main");
 console.log("Applying root custom mappings...");
 run("node", ["./scripts/apply-custom-mappings.mjs"], rootDir);
 
+console.log("Generating custom mappings JSON schema...");
+run("node", ["./scripts/generate-custom-mappings-schema.mjs"], rootDir);
+
 console.log("Syncing zed assets from local vscode-symbols...");
 run("node", ["./scripts/sync-zed-assets.mjs"], rootDir);
 

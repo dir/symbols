@@ -2,12 +2,12 @@
   "name": "symbols",
   "private": true,
   "description": "Workspace orchestration for vscode-symbols and zed-symbols",
-  "packageManager": "pnpm@10.30.1",
   "scripts": {
-    "setup": "git submodule update --init --recursive",
+    "setup": "git submodule update --init --recursive && pnpm schema:generate",
     "workspace:status": "git submodule status --recursive && git status --short",
     "workspace:sync": "node ./scripts/workspace-sync.mjs",
     "workspace:publish": "node ./scripts/workspace-publish.mjs",
+    "schema:generate": "node ./scripts/generate-custom-mappings-schema.mjs",
     "fmt": "oxfmt",
     "fmt:check": "oxfmt --check",
     "lint": "oxlint",
@@ -16,5 +16,6 @@
   "devDependencies": {
     "oxfmt": "^0.35.0",
     "oxlint": "^1.50.0"
-  }
+  },
+  "packageManager": "pnpm@10.30.1"
 }
