@@ -1,5 +1,7 @@
 {
-  "fileExtensions": {},
+  "fileExtensions": {
+    "pl": "perl"
+  },
   "fileNames": {},
   "folderNames": {},
   "folderNamesExpanded": {}
