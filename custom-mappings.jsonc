@@ -1,7 +1,8 @@
 {
   "$schema": "./custom-mappings.schema.json",
   "fileExtensions": {
-    "pl": "perl"
+    "pl": "perl",
+    "PL": "perl"
   },
   "fileNames": {
     "turbo.jsonc": "turborepo"

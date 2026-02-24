@@ -20,7 +20,7 @@ pnpm run setup
 
 Edit:
 
-- `custom-mappings.json`
+- `custom-mappings.jsonc`
 - Schema (auto-generated): `schema/custom-mappings.schema.json`
 
 Example:
@@ -52,11 +52,11 @@ Example:
   - Regenerates `schema/custom-mappings.schema.json` from current `vscode-symbols` icon keys.
 - `pnpm run workspace:publish`
   - Runs `workspace:sync`, commits needed changes, then pushes `vscode-symbols`, `zed-symbols`, and this root repo.
-  - This is the one command to run after changing `custom-mappings.json`.
+  - This is the one command to run after changing `custom-mappings.jsonc`.
 
 ## Typical Flow
 
-After editing `custom-mappings.json`, run:
+After editing `custom-mappings.jsonc`, run:
 
 ```bash
 pnpm run workspace:publish

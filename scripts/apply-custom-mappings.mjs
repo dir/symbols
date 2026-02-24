@@ -5,7 +5,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
-const customMappingsPath = path.join(rootDir, "custom-mappings.json");
+const customMappingsPath = path.join(rootDir, "custom-mappings.jsonc");
 const vscodeSourceThemePath = path.join(rootDir, "vscode-symbols/src/symbol-icon-theme.json");
 const vscodeModifiedThemePath = path.join(
   rootDir,
