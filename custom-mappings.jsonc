@@ -20,10 +20,4 @@
     "artisan": "php",
     "frankenphp": "exe",
   },
-  "folderNames": {
-    ".cursor": "folder-cursor",
-  },
-  "folderNamesExpanded": {
-    ".cursor": "folder-cursor",
-  },
 }
