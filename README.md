@@ -13,20 +13,20 @@ of commits.
 ```bash
 git clone <your-root-repo-url>
 cd symbols
-npm run submodules:init
+pnpm run submodules:init
 ```
 
 ## Daily Commands
 
 From this root directory:
 
-- `npm run status`
+- `pnpm run status`
   - Shows root and submodule status.
-- `npm run sync:vscode`
+- `pnpm run sync:vscode`
   - Fast-forwards `vscode-symbols` from upstream (`miguelsolorio/vscode-symbols`).
-- `npm run build:zed`
+- `pnpm run build:zed`
   - Regenerates `zed-symbols` theme/icons from local `vscode-symbols`.
-- `npm run sync:all`
+- `pnpm run sync:all`
   - Runs `sync:vscode` then `build:zed`.
 
 ## Custom Mappings
@@ -35,7 +35,7 @@ Keep your Zed-specific custom mapping overrides in:
 
 - `zed-symbols/src/custom-mappings.ts`
 
-These are merged on top of upstream mappings during `npm run build:zed`.
+These are merged on top of upstream mappings during `pnpm run build:zed`.
 
 ## Commit Flow
 

@@ -1,13 +1,14 @@
 {
-  "name": "symbols-workspace",
+  "name": "symbols",
   "private": true,
   "description": "Workspace orchestration for vscode-symbols and zed-symbols",
+  "packageManager": "pnpm@10.30.1",
   "scripts": {
     "submodules:init": "git submodule update --init --recursive",
     "submodules:sync": "git submodule sync --recursive && git submodule update --init --recursive",
     "status": "git submodule status --recursive && git status --short",
-    "sync:vscode": "npm --prefix ./vscode-symbols run sync:upstream",
-    "build:zed": "npm --prefix ./zed-symbols run build",
-    "sync:all": "bash ./scripts/sync-all.sh"
+    "sync:vscode": "pnpm --dir ./vscode-symbols sync:upstream",
+    "build:zed": "pnpm --dir ./zed-symbols build",
+    "sync:all": "node ./scripts/sync-all.mjs"
   }
 }
