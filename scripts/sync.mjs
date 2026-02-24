@@ -80,6 +80,9 @@ run("node", ["./scripts/sync-vscode.mjs"], rootDir);
 console.log("Generating custom mappings JSON schema...");
 run("node", ["./scripts/generate/json-schema.mjs"], rootDir);
 
+console.log("Generating preview folder...");
+run("node", ["./scripts/generate/preview.mjs"], rootDir);
+
 console.log("Syncing zed-symbols from local vscode-symbols...");
 run("node", ["./scripts/sync-zed.mjs"], rootDir);
 

@@ -7,6 +7,10 @@
   "fileNames": {
     ".oxfmtrc.json": "oxlint",
     "turbo.jsonc": "turborepo",
+    "robots.txt": "robot",
+    "CLAUDE.md": "claude",
+    "artisan": "php",
+    "frankenphp": "exe",
   },
   "folderNames": {},
   "folderNamesExpanded": {},
