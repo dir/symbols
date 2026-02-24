@@ -5,6 +5,7 @@
     "PL": "perl",
   },
   "fileNames": {
+    ".oxfmtrc.json": "oxlint",
     "turbo.jsonc": "turborepo",
   },
   "folderNames": {},
