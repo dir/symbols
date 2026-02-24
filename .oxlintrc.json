@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "ignorePatterns": ["vscode-symbols/**", "zed-symbols/**"],
+  "ignorePatterns": ["vscode-symbols/**", "zed-symbols/**", "file-types/**"],
   "plugins": ["eslint", "import", "jsdoc", "node", "oxc", "promise", "unicorn"],
   "categories": {
     "correctness": "error",
