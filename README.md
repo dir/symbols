@@ -1,4 +1,4 @@
-# Symbols Workspace
+# dir/symbols
 
 This repo orchestrates two submodules:
 
@@ -8,10 +8,10 @@ This repo orchestrates two submodules:
 Goal: keep both forks as close to upstream as possible, with custom mappings
 defined only at this root.
 
-## Setup
+## Quickstart
 
 ```bash
-git clone <your-root-repo-url>
+git clone https://github.com/dir/symbols.git
 cd symbols
 pnpm run setup
 ```
@@ -50,9 +50,12 @@ Example:
   - Syncs both submodules from upstream, applies root mappings, updates zed assets.
 - `pnpm run schema:generate`
   - Regenerates `schema/custom-mappings.schema.json` from current `vscode-symbols` icon keys.
+- `pnpm run demos:generate`
+  - Recreates `demos/` with `file-extensions/`, `file-names/`, and `folder-names/` demo artifacts from the merged mappings.
+  - Also writes `demos/report.json` with counts and any filename sanitization notes.
 - `pnpm run workspace:publish`
   - Runs `workspace:sync`, commits needed changes, then pushes `vscode-symbols`, `zed-symbols`, and this root repo.
-  - This is the one command to run after changing `custom-mappings.jsonc`.
+  - This is the one command to run after changing `custom-mappings.json`.
 
 ## Typical Flow
 

@@ -8,6 +8,9 @@ importers:
 
   .:
     devDependencies:
+      jsonc-parser:
+        specifier: ^3.3.1
+        version: 3.3.1
       oxfmt:
         specifier: ^0.35.0
         version: 0.35.0
@@ -261,6 +264,9 @@ packages:
     cpu: [x64]
     os: [win32]
 
+  jsonc-parser@3.3.1:
+    resolution: {integrity: sha512-HUgH65KyejrUFPvHFPbqOY0rsFip3Bo5wb4ngvdi1EpCYWUQDC5V+Y7mZws+DLkr4M//zQJoanu1SP+87Dv1oQ==}
+
   oxfmt@0.35.0:
     resolution: {integrity: sha512-QYeXWkP+aLt7utt5SLivNIk09glWx9QE235ODjgcEZ3sd1VMaUBSpLymh6ZRCA76gD2rMP4bXanUz/fx+nLM9Q==}
     engines: {node: ^20.19.0 || >=22.12.0}
@@ -395,6 +401,8 @@ snapshots:
 
   '@oxlint/binding-win32-x64-msvc@1.50.0':
     optional: true
+
+  jsonc-parser@3.3.1: {}
 
   oxfmt@0.35.0:
     dependencies:
