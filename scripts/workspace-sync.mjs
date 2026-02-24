@@ -65,16 +65,8 @@ run("git", ["submodule", "update", "--init", "--recursive"], rootDir);
 ensureCleanRepo(vscodeDir, "vscode-symbols");
 ensureCleanRepo(zedDir, "zed-symbols");
 
-ensureRemote(
-  vscodeDir,
-  "upstream",
-  "https://github.com/miguelsolorio/vscode-symbols.git",
-);
-ensureRemote(
-  zedDir,
-  "upstream",
-  "https://github.com/sebastiandotdev/zed-symbols.git",
-);
+ensureRemote(vscodeDir, "upstream", "https://github.com/miguelsolorio/vscode-symbols.git");
+ensureRemote(zedDir, "upstream", "https://github.com/sebastiandotdev/zed-symbols.git");
 
 console.log("Syncing vscode-symbols from upstream/main...");
 rebaseOnUpstream(vscodeDir, "upstream/main");

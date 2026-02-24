@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "ignorePatterns": ["vscode-symbols/**", "zed-symbols/**"],
+  "plugins": ["eslint", "import", "jsdoc", "node", "oxc", "promise", "unicorn"],
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn",
+    "perf": "warn",
+    "style": "warn"
+  },
+  "rules": {
+    "eslint/sort-keys": "off",
+    "eslint/sort-imports": "off",
+    "eslint/no-ternary": "off",
+    "eslint/no-magic-numbers": "off",
+    "import/no-nodejs-modules": "off",
+    "unicorn/no-null": "off"
+  },
+  "settings": {},
+  "env": {
+    "builtin": true
+  },
+  "globals": {}
+}

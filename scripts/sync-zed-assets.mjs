@@ -21,10 +21,7 @@ const keyMapping = {
 const toZedIconKey = (iconKey) => keyMapping[iconKey] || iconKey;
 
 const resolveVscodeThemePath = () => {
-  const modifiedThemePath = path.join(
-    vscodeDir,
-    "src/symbol-icon-theme.modified.json",
-  );
+  const modifiedThemePath = path.join(vscodeDir, "src/symbol-icon-theme.modified.json");
   const sourceThemePath = path.join(vscodeDir, "src/symbol-icon-theme.json");
 
   if (fs.existsSync(modifiedThemePath)) {
@@ -115,9 +112,7 @@ const namedDirectoryIcons = {};
 Object.entries(symbolsIconTheme.folderNames ?? {}).forEach(([folderName, iconKey]) => {
   const collapsedIcon = folderIconDefinitions[iconKey];
   const expandedIconKey = symbolsIconTheme.folderNamesExpanded?.[folderName];
-  const expandedIcon = expandedIconKey
-    ? folderIconDefinitions[expandedIconKey]
-    : collapsedIcon;
+  const expandedIcon = expandedIconKey ? folderIconDefinitions[expandedIconKey] : collapsedIcon;
 
   if (!collapsedIcon) {
     return;
@@ -128,11 +123,9 @@ Object.entries(symbolsIconTheme.folderNames ?? {}).forEach(([folderName, iconKey
     expanded: expandedIcon?.iconPath || collapsedIcon.iconPath,
   };
 
-  [folderName, `.${folderName}`, `_${folderName}`, `__${folderName}__`].forEach(
-    (variation) => {
-      namedDirectoryIcons[variation] = iconPaths;
-    },
-  );
+  [folderName, `.${folderName}`, `_${folderName}`, `__${folderName}__`].forEach((variation) => {
+    namedDirectoryIcons[variation] = iconPaths;
+  });
 });
 
 const zedManifest = {
@@ -161,13 +154,7 @@ fs.writeFileSync(
   JSON.stringify(zedManifest, null, 2),
 );
 
-syncFlatDir(
-  path.join(vscodeDir, "src/icons/files"),
-  path.join(zedDir, "icons/files"),
-);
-syncFlatDir(
-  path.join(vscodeDir, "src/icons/folders"),
-  path.join(zedDir, "icons/folders"),
-);
+syncFlatDir(path.join(vscodeDir, "src/icons/files"), path.join(zedDir, "icons/files"));
+syncFlatDir(path.join(vscodeDir, "src/icons/folders"), path.join(zedDir, "icons/folders"));
 
 console.log("Synced zed-symbols assets from local vscode-symbols theme.");
