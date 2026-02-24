@@ -6,9 +6,10 @@
   "scripts": {
     "submodules:init": "git submodule update --init --recursive",
     "submodules:sync": "git submodule sync --recursive && git submodule update --init --recursive",
-    "status": "git submodule status --recursive && git status --short",
-    "sync:vscode": "pnpm --dir ./vscode-symbols sync:upstream",
-    "build:zed": "pnpm --dir ./zed-symbols build",
-    "sync:all": "node ./scripts/sync-all.mjs"
+    "submodules:status": "git submodule status --recursive && git status --short",
+    "vscode:sync": "pnpm --dir ./vscode-symbols sync:upstream",
+    "mappings:apply": "node ./scripts/apply-custom-mappings.mjs",
+    "zed:build": "pnpm run mappings:apply && pnpm --dir ./zed-symbols build",
+    "workspace:sync": "pnpm run vscode:sync && pnpm run zed:build"
   }
 }

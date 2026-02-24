@@ -16,26 +16,57 @@ cd symbols
 pnpm run submodules:init
 ```
 
-## Daily Commands
+## Command Reference
 
-From this root directory:
+Run all commands from this root directory.
 
-- `pnpm run status`
-  - Shows root and submodule status.
-- `pnpm run sync:vscode`
-  - Fast-forwards `vscode-symbols` from upstream (`miguelsolorio/vscode-symbols`).
-- `pnpm run build:zed`
-  - Regenerates `zed-symbols` theme/icons from local `vscode-symbols`.
-- `pnpm run sync:all`
-  - Runs `sync:vscode` then `build:zed`.
+| Command | When to use | What it does |
+| --- | --- | --- |
+| `pnpm run submodules:init` | First clone of this workspace | Initializes and checks out both submodules recursively |
+| `pnpm run submodules:sync` | After changing `.gitmodules` URL/branch settings | Syncs submodule config and ensures submodules are initialized |
+| `pnpm run submodules:status` | Anytime you want a quick state check | Shows submodule commit pointers and root git status |
+| `pnpm run vscode:sync` | Pull latest upstream VSCode icons into your fork | Runs `vscode-symbols` upstream fast-forward sync |
+| `pnpm run mappings:apply` | After editing `custom-mappings.json` | Rebuilds `vscode-symbols/src/symbol-icon-theme.modified.json` |
+| `pnpm run zed:build` | Rebuild Zed theme/icons from local VSCode source | Applies mappings, then runs `zed-symbols` build |
+| `pnpm run workspace:sync` | Normal day-to-day update flow | Runs `vscode:sync`, then `zed:build` |
 
 ## Custom Mappings
 
 Keep your Zed-specific custom mapping overrides in:
 
-- `zed-symbols/src/custom-mappings.ts`
+- `custom-mappings.json`
 
-These are merged on top of upstream mappings during `pnpm run build:zed`.
+These are merged on top of upstream mappings and written to:
+
+- `vscode-symbols/src/symbol-icon-theme.modified.json`
+
+That modified theme is then consumed by the Zed build.
+
+Recommended routine:
+
+1. Edit `custom-mappings.json` if needed.
+2. Run `pnpm run workspace:sync`.
+3. Review changes in `vscode-symbols` and `zed-symbols`.
+4. Commit submodules, then commit updated submodule pointers in this root repo.
+
+Example:
+
+```json
+{
+  "fileExtensions": {
+    "tfvars": "terraform"
+  },
+  "fileNames": {
+    "Brewfile": "homebrew"
+  },
+  "folderNames": {
+    "infra": "folder-assets"
+  },
+  "folderNamesExpanded": {
+    "infra": "folder-assets"
+  }
+}
+```
 
 ## Commit Flow
 
@@ -49,5 +80,5 @@ git commit -m "Update symbols submodule pointers"
 
 ## Notes
 
-- `sync:vscode` intentionally fails if `vscode-symbols` has uncommitted changes.
+- `vscode:sync` intentionally fails if `vscode-symbols` has uncommitted changes.
 - `submodules:sync` updates submodule URL/branch config and ensures they are initialized.
