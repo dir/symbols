@@ -14,6 +14,7 @@
   "fileNames": {
     "Caddyfile": "gear",
     ".oxfmtrc.json": "oxlint",
+    ".oxfmtrc.jsonc": "oxlint",
     "turbo.jsonc": "turborepo",
     "robots.txt": "robot",
     "CLAUDE.md": "claude",
